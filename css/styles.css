@@ -1,8 +1,10 @@
 :root {
-  --color-primary: #ff0000;
-  --color-secondary: #ff9900;
+  --color-primary: #0051ff;
+  --color-secondary: #0004ff;
   --color-accent: #18cc00;
   --color-body: #222222;
+  --color-nav-bar: #001aff;
+  --color-menu-item: #bbbbbb;
 }
 
 html {
@@ -17,66 +19,62 @@ body {
   background: #333;
 }
 
-/* Lists */
+/* Navigation-bar */
 
-.navigation-bar {
-  background: #650072;
-  color: #aaa;
+.navigation__bar {
+  align-items: center;
+  background: var(--color-nav-bar);
+  color: var(--color-menu-item);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
 }
 
-.navigation-bar a {
+.navigation__bar a{
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a {
   color: inherit;
   text-decoration: none;
 }
-.navigation-bar .fas {
-  margin-right: 0.5rem;
-  width: 2rem;
-  text-align: center;
-}
 
-.navigation-bar li {
-  padding: 1.5rem;
-}
-
-.navigation-bar li:hover {
-  background: #3f0047;
+.navigation__bar a:hover{
   color: #ffffff;
 }
 
-ul {
+.menu ul {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  background: var(--color-secondary);
+  color: #ccc;
+  font-size: 2.5rem;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: center;
+}
+
+.menu li:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.icon__bar {
+  padding: 0 2px;
 }
 
 /* Collapsible */
 
-.collapsible__navigation-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+.icon__logo {
+  width: 150px;
 }
 
-.collapsible__heading {
-  margin: 0;
-}
 
-.collapsible__content {
-  display: none;
-}
 
-.collapsible--expanded .collapsible__content {
-  display: block;
-}
 
-.logo__img {
-  padding: 0.5rem;
-}
-
-.icon__menu {
-  color: white;
-  font-size: 24px;
-  padding-right: 1rem;
-}
