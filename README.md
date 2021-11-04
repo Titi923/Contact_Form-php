@@ -5,5 +5,5 @@ A contact form with the backend build for sending emails.
 
 // How to use for your projects
 
-1. Open the 'index.php' file
-2. Replace the 'youremail@email.com' with the email address where you want the message/emails to be sent.
+1. Open the "index.php" file
+2. Replace the "youremail@email.com" with the email address where you want the message/emails to be sent.
