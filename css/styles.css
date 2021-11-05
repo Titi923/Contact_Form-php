@@ -18,11 +18,20 @@ body {
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   font-size: 2rem;
+   background: #222;
 }
 
 .container {
   max-width: 1140px;
   margin: 0 auto;
+  position: absolute;
+  width: 100%;
+  max-width: 1160px;
+  height: 320px;
+  background: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Icons */
@@ -289,10 +298,20 @@ a {
 .contact__input textarea {
   margin: 0 0 0.5rem 0;
   padding-left: 10px;
+  border-radius: 5px;
+
 }
 
 .contact__input button {
   padding: 1.5rem 0;
+  border-radius: 5px;
+  margin-bottom: 0.75rem;
+  background: yellow;
+}
+
+.contact__input button:hover {
+  background: gold;
+  color: #ffffff;
 }
 
 /* Large screens */
@@ -353,50 +372,86 @@ a {
   }
 }
 
-.card__flipping {
+.thecard{
   position: relative;
-  width: 35rem;
-  height: 40rem;
-  border-radius: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
   transform-style: preserve-3d;
-  transition: transform 1s ease-in-out;
-  box-shadow: 0 0 20px 5px;
-
+  transition: all 0.8s ease;
 }
 
-.card__front {
-  position: absolute;
-  width: 35rem;
-  height: 40rem;
-  background: blueviolet;
-  backface-visibility: hidden;
-  color: #fff;  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.card__flipping-flipped {
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.thecard:hover{
   transform: rotateY(180deg);
 }
 
-.card__back {
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+ .thefront{
   position: absolute;
-  width: 35rem;
-  height: 40rem;
-  background: rgb(208, 226, 43);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
   backface-visibility: hidden;
-  color: #fff;  
-  border-radius: 20px;  
-  transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  background: #ffc728;
+  color: #000;
 }
 
-.card__front img {
-  height: 10rem;
-  width: 30rem;
-  padding: 0 0 20rem 0;
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+.theback{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  background: #fafafa;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+.thefront h1, .theback h1{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.thefront p, .theback p{
+  font-family: 'zilla slab', sans-serif;
+  padding: 30px;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+}
+
+.alert {
+  background: #e90000;
+  color: #fff;
+  font-weight: bold;
+  padding: 1.5rem;
+  border-radius: 3px;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.alert-succes {
+  background: #00a008;
+  font-weight: bold;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 3px;
+  text-align: center;
+  margin: 1.5rem 0;
 }
